@@ -2,7 +2,6 @@
 " Plugin to provide intelligent automatic copyright updating.
 " File:    copyright.vim
 " Author:  Mike Williams (mrmrdubya@gmail.com)
-" Changed: 9th September 2009
 "
 " See LICENSE.
 "
@@ -27,8 +26,8 @@ function! <SID>DoUpdate(owner)
 	endif
 endfunc
 
-function! UpdateCopyright(who)
-	exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate(".a:who.")"
+function! copyright#UpdateFor(who)
+	exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".a:who."')"
 endfunc
 
 " eof
