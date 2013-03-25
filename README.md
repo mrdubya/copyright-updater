@@ -1,6 +1,31 @@
 Copyright Updater
 =================
 
+This plugin will automatically update Copyright notices for specific Copyright
+owners.  This is based on VIM tip #1521.
+
+The plugin recognises the following examples of Copyright notice:
+
+	Copyright 1999 Fred Bloggs, All rights reserved.
+	Copyright (C) 1999 Fred Bloggs, All rights reserved.
+	Copyright (c) 1999-2005 Fred Bloggs
+
+Whenever a file that has been modified is written then the year of publication
+is updated to include the current year if it is different. If only one year is
+listed then it is changed to YYYY-<current year>, if two years are listed and
+the second year is not this year then the second year is updated to this year.
+
+The plugin is setup by telling it which Copyright owners to update the notice
+for. This prevents accidentally updating Copyright notices from other owners
+that may be present in the file.
+
+To setup updating a Copyright notice add a call to `copyright#UpdateFor()` to
+your `.vimrc`/`_vimrc` file as follows:
+
+	call copyright#UpdateFor('Fred Bloggs')
+
+Add as many CopyRight owners as needed to the call.
+
 License
 =======
 
