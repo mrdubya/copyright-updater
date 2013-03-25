@@ -18,7 +18,7 @@ if !exists("g:cpyupdtFiletypes")
 endif
 
 "~~~
-" UpdateCopyright() - Function that updates any copyright statements
+" DoUpdate() - Update copyright statements for specific owner
 " -
 function! <SID>DoUpdate(owner)
 	if &modified
@@ -26,8 +26,13 @@ function! <SID>DoUpdate(owner)
 	endif
 endfunc
 
-function! copyright#UpdateFor(who)
-	exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".a:who."')"
+"~~~
+" copyright#UpdateFor() - Set up who to update copyright for
+" -
+function! copyright#UpdateFor(...)
+	for whom in a:000
+		exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".whom."')"
+	endfor
 endfunc
 
 " eof
