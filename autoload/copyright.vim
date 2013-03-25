@@ -30,9 +30,11 @@ endfunc
 " copyright#UpdateFor() - Set up who to update copyright for
 " -
 function! copyright#UpdateFor(...)
-	for whom in a:000
-		exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".whom."')"
-	endfor
+	augroup CopyrightUpdater
+		for whom in a:000
+			exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".whom."')"
+		endfor
+	augroup END
 endfunc
 
 " eof
