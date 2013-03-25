@@ -22,9 +22,11 @@ that may be present in the file.
 To setup updating a Copyright notice add a call to `copyright#UpdateFor()` to
 your `.vimrc`/`_vimrc` file as follows:
 
-	call copyright#UpdateFor('Fred Bloggs')
+```vim
+call copyright#UpdateFor('Fred Bloggs')
+```
 
-Add as many CopyRight owners as needed to the call.
+Add as many Copyright owners as needed to the call.
 
 License
 =======
