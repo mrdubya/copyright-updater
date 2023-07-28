@@ -36,7 +36,7 @@ Add as many Copyright owners as needed to the call.
 ==============================================================================
 COMMANDS 						*copyr-commands*
 
-:CopyrUpdateToggle 					*:CopyrUpdateToggle*
+:CopyrToggleUpdate 					*:CopyrToggleUpdate*
 	The command toggles whether the Copyright year is updated or not for
 	the current buffer.
 
@@ -49,6 +49,10 @@ copyright#UpdateFor({names})
 
 	{names} should be a string or a list of strings containing names of
 	the assignee in a Copyright notice.
+
+copyright#ToggleUpdate()
+	Turn updating of Copyright notices in the current buffer on or off
+	depending on whether it is already off or on.
 
 ==============================================================================
 LICENSE 						*copyr-license*

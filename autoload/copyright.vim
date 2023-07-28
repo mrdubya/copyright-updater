@@ -6,14 +6,11 @@
 " See LICENSE.
 "
 
-" Finish if plugin already loaded
-if exists("loaded_copyrightupdater")
+" Finish if autoload plugin already loaded
+if exists("loaded_copyrightupdater_autoload")
 	finish
 endif
-let loaded_copyrightupdater = 1
-
-" Commands to control updating Copyright notice
-command! CopyrToggleUpdate :call CopyrToggleUpdate()
+let loaded_copyrightupdater_autoload = 1
 
 " Default is do for all file types
 if !exists("g:cpyupdtFiletypes")
@@ -41,9 +38,10 @@ function! copyright#UpdateFor(...)
 endfunc
 
 "~~~
-" CopyrToggleUpdate() - turn updating Copyright year on or off for the buffer
+" copyright#ToggleUpdate() - Turn updating Copyright year on or off for the
+" buffer
 " -
-function! CopyrToggleUpdate()
+function! copyright#ToggleUpdate()
 	" Updating starts, on so turn off with the first call
 	if !exists("b:do_update")
 		let b:do_update = 0
