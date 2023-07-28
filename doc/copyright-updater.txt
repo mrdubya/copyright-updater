@@ -1,0 +1,58 @@
+*copyright-updater.txt*	Copyright notice year updater.
+
+Copyright (c) 2023 Mike Williams <mrmrdubya@gmail.com>
+
+A plugin to automatically update the year in Copyright notice in a modified
+file.
+
+==============================================================================
+INTRODUCTION						*copyr-intro*
+
+This plugin will automatically update the year in Copyright notices for
+specific Copyright owners. This is based on VIM tip #1521.
+
+The plugin recognises the following examples of Copyright notice: >
+
+	Copyright 1999 Fred Bloggs, All rights reserved.
+	Copyright (C) 1999 Fred Bloggs, All rights reserved.
+	Copyright (c) 1999-2005 Fred Bloggs
+<
+Whenever a file that has been modified is written then the year of publication
+is updated to include the current year if it is different. If only one year is
+listed then it is changed to YYYY-<current year>, if two years are listed and
+the second year is not this year then the second year is updated to this year.
+
+The plugin is setup by telling it which Copyright owners to update the notice
+for. This prevents accidentally updating Copyright notices from other owners
+that may be present in the file.
+
+To setup updating a Copyright notice add a call to `copyright#UpdateFor()` to
+your `.vimrc`/`_vimrc` file as follows: >
+
+	:call copyright#UpdateFor('Fred Bloggs')
+<
+Add as many Copyright owners as needed to the call.
+
+==============================================================================
+COMMANDS 						*copyr-commands*
+
+:CopyrUpdateToggle 					*:CopyrUpdateToggle*
+	The command toggles whether the Copyright year is updated or not for
+	the current buffer.
+
+==============================================================================
+FUNCTIONS						*copyr-functions*
+
+copyright#UpdateFor({names})
+	Add one or more Copyright owner names to look for when updating the
+	Copyright year.
+
+	{names} should be a string or a list of strings containing names of
+	the assignee in a Copyright notice.
+
+==============================================================================
+LICENSE 						*copyr-license*
+
+See the LICENSE file in the parent directory.
+
+ vim:tw=78:ts=8:ft=help:noet:nospell
