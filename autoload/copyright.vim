@@ -1,5 +1,5 @@
 "=============================================================================
-" Automatic copyright updater plugin for VIM.
+" Automatic copyright notice year updater plugin for VIM.
 "
 " Copyright (C) 2023 Mike Williams. All rights reserved.
 "
@@ -12,7 +12,7 @@ if exists("loaded_copyrightupdater")
 endif
 let loaded_copyrightupdater = 1
 
-" Commands to control updating Copyright statements
+" Commands to control updating Copyright notice
 command! CopyrToggleUpdate :call CopyrToggleUpdate()
 
 " Default is do for all file types
@@ -21,7 +21,7 @@ if !exists("g:cpyupdtFiletypes")
 endif
 
 "~~~
-" DoUpdate() - Update copyright statements for specific owner
+" DoUpdate() - Update Copyright notice for an owner
 " -
 function! <SID>DoUpdate(owner)
 	if &modified && (!exists("b:do_update") || b:do_update == 1)
@@ -30,7 +30,7 @@ function! <SID>DoUpdate(owner)
 endfunc
 
 "~~~
-" copyright#UpdateFor() - Set up who to update copyright for
+" copyright#UpdateFor() - Set up who to update Copyright for
 " -
 function! copyright#UpdateFor(...)
 	augroup CopyrightUpdater
@@ -41,10 +41,10 @@ function! copyright#UpdateFor(...)
 endfunc
 
 "~~~
-" CopyrToggleUpdate() - turn updating copyright date on or off
+" CopyrToggleUpdate() - turn updating Copyright year on or off for the buffer
 " -
 function! CopyrToggleUpdate()
-	" Updating starts on so turn off with the first call
+	" Updating starts, on so turn off with the first call
 	if !exists("b:do_update")
 		let b:do_update = 0
 	else
