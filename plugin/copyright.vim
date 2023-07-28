@@ -14,5 +14,6 @@ let loaded_copyrightupdater = 1
 
 " Commands to control updating Copyright notice
 command! CopyrToggleUpdate :call copyright#ToggleUpdate()
+command! -nargs=1 CopyrUpdateFor :call copyright#UpdateFor(<args>)
 
 " eof

@@ -40,6 +40,10 @@ COMMANDS 						*copyr-commands*
 	The command toggles whether the Copyright year is updated or not for
 	the current buffer.
 
+:CopyrUpdateFor <owner>					*:CopyrUpdateFor*
+	The command adds the owner name to look for when updating the
+	Copyright year.
+
 ==============================================================================
 FUNCTIONS						*copyr-functions*
 
