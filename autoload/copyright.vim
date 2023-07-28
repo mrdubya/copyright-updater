@@ -1,7 +1,7 @@
 "=============================================================================
-" Plugin to provide intelligent automatic copyright updating.
-" File:    copyright.vim
-" Author:  Mike Williams (mrmrdubya@gmail.com)
+" Automatic copyright updater plugin for VIM.
+"
+" Copyright (C) 2023 Mike Williams. All rights reserved.
 "
 " See LICENSE.
 "
@@ -12,6 +12,9 @@ if exists("loaded_copyrightupdater")
 endif
 let loaded_copyrightupdater = 1
 
+" Commands to control updating Copyright statements
+command! CopyrToggleUpdate :call CopyrToggleUpdate()
+
 " Default is do for all file types
 if !exists("g:cpyupdtFiletypes")
 	let g:cpyupdtFiletypes = '*'
@@ -21,7 +24,7 @@ endif
 " DoUpdate() - Update copyright statements for specific owner
 " -
 function! <SID>DoUpdate(owner)
-	if &modified
+	if &modified && (!exists("b:do_update") || b:do_update == 1)
 		silent! exe "g#\\cCopyright \\((C) \\)\\?\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\(-\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\)\\? ".a:owner."#s#\\(\\d\\{4\\}\\)\\(-\\d\\{4\\}\\)\\?#\\1-".strftime("%Y")
 	endif
 endfunc
@@ -35,6 +38,18 @@ function! copyright#UpdateFor(...)
 			exe "autocmd BufWritePre ".g:cpyupdtFiletypes." :call <SID>DoUpdate('".whom."')"
 		endfor
 	augroup END
+endfunc
+
+"~~~
+" CopyrToggleUpdate() - turn updating copyright date on or off
+" -
+function! CopyrToggleUpdate()
+	" Updating starts on so turn off with the first call
+	if !exists("b:do_update")
+		let b:do_update = 0
+	else
+		let b:do_update = 1 - b:do_update
+	endif
 endfunc
 
 " eof

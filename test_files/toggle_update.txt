@@ -1,0 +1,12 @@
+Test file for testing CopyrToggleUpdate command.
+
+Procedure:
+1. Load this file.
+2. Modify the file in some manner
+3. Save the file - the copyright date should update to include the current year.
+5. Enter the CopyrToggleUpdate command.
+4. Undo the changes done in 2. and to the copyright date.
+6. Save the file - the copyright date should not update.
+
+Copyright (C) 2001 Fred Bloggs.
+
