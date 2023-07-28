@@ -1,8 +1,8 @@
 Copyright Updater
 =================
 
-This plugin will automatically update Copyright notices for specific Copyright
-owners.  This is based on VIM tip #1521.
+This plugin will automatically update the year in Copyright notices for specific
+Copyright owners. This is based on VIM tip #1521.
 
 The plugin recognises the following examples of Copyright notice:
 
@@ -31,7 +31,7 @@ Add as many Copyright owners as needed to the call.
 License
 =======
 
-Copyright (c) 2009-2013 Mike Williams <mrmrdubya@gmail.com>
+Copyright (c) 2009-2023 Mike Williams <mrmrdubya@gmail.com>
 
 Permission to use, copy, modify, and distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
