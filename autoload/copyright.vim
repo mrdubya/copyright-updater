@@ -22,7 +22,9 @@ endif
 " -
 function! <SID>DoUpdate(owner)
 	if &modified && (!exists("b:do_update") || b:do_update == 1)
-		silent! exe "g#\\cCopyright \\((C) \\)\\?\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\(-\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\)\\? ".a:owner."#s#\\(\\d\\{4\\}\\)\\(-\\d\\{4\\}\\)\\?#\\1-".strftime("%Y")
+		let save_cursor = getcurpos()
+		silent! exe "keepjumps g#\\cCopyright \\((C) \\)\\?\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\(-\\(".strftime("%Y")."\\)\\@!\\d\\{4\\}\\)\\? ".a:owner."#s#\\(\\d\\{4\\}\\)\\(-\\d\\{4\\}\\)\\?#\\1-".strftime("%Y")
+		call setpos('.', save_cursor)
 	endif
 endfunc
 
