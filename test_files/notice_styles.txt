@@ -1,0 +1,111 @@
+Test file for Copyright notice formats that can be updated.
+
+NOTE: This file uses UTF-8 encoding.
+
+Procedure:
+1. Load this file.
+2. Modify the file in some manner.
+3. Add Fred Bloggs for updates with :CopyrUpdateFor 'Fred Bloggs'
+4. Save the file - check all but last block update.
+
+Simple:
+C 2001 Fred Bloggs
+(C) 2001 Fred Bloggs
+© 2001 Fred Bloggs
+Copyright 2001 Fred Bloggs
+Copyright (C) 2001 Fred Bloggs
+Copyright © 2001 Fred Bloggs
+
+Simple, lowercase:
+c 2001 Fred Bloggs
+(c) 2001 Fred Bloggs
+copyright 2001 Fred Bloggs
+copyright (c) 2001 Fred Bloggs
+
+Period after name:
+C 2001 Fred Bloggs.
+(C) 2001 Fred Bloggs.
+© 2001 Fred Bloggs.
+Copyright 2001 Fred Bloggs.
+Copyright (C) 2001 Fred Bloggs.
+Copyright © 2001 Fred Bloggs.
+
+Period after name, lowercase:
+c 2001 Fred Bloggs.
+(c) 2001 Fred Bloggs.
+copyright 2001 Fred Bloggs.
+copyright (c) 2001 Fred Bloggs.
+
+Statement after name:
+C 2001 Fred Bloggs. All rights reserved.
+(C) 2001 Fred Bloggs. All rights reserved.
+© 2001 Fred Bloggs. All rights Reserved.
+Copyright 2001 Fred Bloggs. All rights reserved.
+Copyright (C) 2001 Fred Bloggs. All rights reserved.
+Copyright © 2001 Fred Bloggs. All rights reserved.
+
+Statement after name, lowercase:
+C 2001 Fred Bloggs. All rights reserved.
+(C) 2001 Fred Bloggs. All rights reserved.
+Copyright 2001 Fred Bloggs. All rights reserved.
+Copyright (C) 2001 Fred Bloggs. All rights reserved.
+
+Simple, year range:
+C 2001-2010 Fred Bloggs
+(C) 2001-2010 Fred Bloggs
+© 2001-2010 Fred Bloggs
+Copyright 2001-2010 Fred Bloggs
+Copyright (C) 2001-2010 Fred Bloggs
+Copyright © 2001-2010 Fred Bloggs
+
+Simple, year range, lowercase:
+c 2001-2010 Fred Bloggs
+(c) 2001-2010 Fred Bloggs
+copyright 2001-2010 Fred Bloggs
+copyright (c) 2001-2010 Fred Bloggs
+
+Period after name, year range:
+C 2001-2010 Fred Bloggs.
+(C) 2001-2010 Fred Bloggs.
+© 2001-2010 Fred Bloggs.
+Copyright 2001-2010 Fred Bloggs.
+Copyright (C) 2001-2010 Fred Bloggs.
+Copyright © 2001-2010 Fred Bloggs.
+
+Period after name, year range, lowercase:
+c 2001-2010 Fred Bloggs.
+(c) 2001-2010 Fred Bloggs.
+copyright 2001-2010 Fred Bloggs.
+copyright (c) 2001-2010 Fred Bloggs.
+
+Statement after name, year range:
+C 2001-2010 Fred Bloggs. All rights reserved.
+(C) 2001-2010 Fred Bloggs. All rights reserved.
+© 2001-2010 Fred Bloggs. All rights reserved.
+Copyright 2001-2010 Fred Bloggs. All rights reserved.
+Copyright (C) 2001-2010 Fred Bloggs. All rights reserved.
+Copyright © 2001-2010 Fred Bloggs. All rights reserved.
+
+Statement after name, year range, lowercase:
+C 2001-2010 Fred Bloggs. All rights reserved.
+(C) 2001-2010 Fred Bloggs. All rights reserved.
+Copyright 2001-2010 Fred Bloggs. All rights reserved.
+Copyright (C) 2001-2010 Fred Bloggs. All rights reserved.
+
+Should not be updated:
+2001-2010 Fred Bloggs
+2001- Fred Bloggs
+-2010 Fred Bloggs
+X 2001-2010 Fred Bloggs
+C 2001- Fred Bloggs
+© 2001- Fred Bloggs
+C -2010 Fred Bloggs
+© -2010 Fred Bloggs
+(x) 2001-2010 Fred Bloggs
+(c) 2001- Fred Bloggs
+(c) -2010 Fred Bloggs
+Copyleft (C) 2001-2010 Fred Bloggs
+Copyleft © 2001-2010 Fred Bloggs
+Copyright (X) 2001-2010 Fred Bloggs
+Copyright (C) 2001- Fred Bloggs
+Copyright © 2001- Fred Bloggs
