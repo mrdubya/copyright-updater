@@ -4,10 +4,10 @@ Procedure:
 1. Load this file.
 2. Modify the file in some manner.
 3. Add Fred Bloggs for updates with :CopyrUpdateFor 'Fred Bloggs'
-4. Save the file - the copyright date should update to include the current year.
+4. Save the file - the Copyright year should update to include the current year.
 6. Use the :CopyrToggleUpdate command.
-5. Undo the changes done in 2. and to the copyright date.
-7. Save the file - the copyright date should not update.
+5. Undo the changes done in 2. and to the Copyright year.
+7. Save the file - the Copyright year should not update.
 
 Copyright (C) 2001 Fred Bloggs.
 
