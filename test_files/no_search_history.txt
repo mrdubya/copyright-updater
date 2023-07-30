@@ -1,0 +1,12 @@
+Test file for testing the search history is not changed.
+
+Procedure:
+1. Load this file.
+2. Modify the file in some manner.
+3. Add Fred Bloggs for updates with :CopyrUpdateFor 'Fred Bloggs'
+4. Save the file - the Copyright year should update to include the current year.
+5. Use the command :history / to check that the Copyright search pattern does
+   not appear.
+
+Copyright (C) 2001 Fred Bloggs.
+
