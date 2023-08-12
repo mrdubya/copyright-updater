@@ -12,8 +12,14 @@ if exists("loaded_copyrightupdater")
 endif
 let loaded_copyrightupdater = 1
 
+let s:keepcpo = &cpo
+set cpo&vim
+
 " Commands to control updating Copyright notice
 command! CopyrToggleUpdate :call copyright#ToggleUpdate()
 command! -nargs=1 CopyrUpdateFor :call copyright#UpdateFor(<args>)
+
+let &cpo = s:keepcpo
+unlet s:keepcpo
 
 " eof

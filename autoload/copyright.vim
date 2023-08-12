@@ -12,6 +12,9 @@ if exists("loaded_copyrightupdater_autoload")
 endif
 let loaded_copyrightupdater_autoload = 1
 
+let s:keepcpo = &cpo
+set cpo&vim
+
 " Default is do for all file types
 if !exists("g:cpyupdtFiletypes")
 	let g:cpyupdtFiletypes = '*'
@@ -51,5 +54,8 @@ function! copyright#ToggleUpdate()
 		let b:do_update = 1 - b:do_update
 	endif
 endfunc
+
+let &cpo = s:keepcpo
+unlet s:keepcpo
 
 " eof
