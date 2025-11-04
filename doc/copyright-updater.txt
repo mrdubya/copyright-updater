@@ -1,6 +1,6 @@
 *copyright-updater.txt*	Copyright notice year updater.
 
-Copyright (c) 2023 Mike Williams <mrmrdubya@gmail.com>
+Copyright (c) 2023-2025 Mike Williams <mrmrdubya@gmail.com>
 
 A plugin to automatically update the year in Copyright notice in a modified
 file.
@@ -19,21 +19,29 @@ The plugin recognises the following examples of Copyright notice: >
 	Copyright (C) 1999 Fred Bloggs, All rights reserved.
 	Copyright (c) 1999-2005 Fred Bloggs
 <
-Whenever a file that has been modified is written then the year of publication
-is updated to include the current year if it is different. If only one year is
-listed then it is changed to YYYY-<current year>, if two years are listed and
-the second year is not this year then the second year is updated to this year.
+Whenever a modified file is written, the year of publication will be updated
+with the current year if it is different. The year can be updated with a year
+range or just a single year.
+
+When updating a year range and only one year is listed then it is changed to
+YYYY-<current year>, if two years are listed and the second year is not this
+year then the second year is updated to this year.
+
+When updating with just the current year it will replace both a single year
+and a year range with the current year.
 
 The plugin is setup by telling it which Copyright owners to update the notice
 for. This prevents accidentally updating Copyright notices from other owners
 that may be present in the file.
 
-To setup updating a Copyright notice add a call to `copyright#UpdateFor()` to
-your `.vimrc`/`_vimrc` file as follows: >
+To setup Copyright notice updating add a call to either
+`copyright#UpdateEndYearFor()` or `copyright#UpdateYearFor()` to your
+`.vimrc`/`_vimrc` file. For example: >
 
-	:call copyright#UpdateFor('Fred Bloggs')
+	:call copyright#UpdateYearFor('Fred Bloggs')
 <
-Add as many Copyright owners as needed to the call.
+Add as many Copyright owners as needed to the call with a list of Copyright
+owner names.
 
 ==============================================================================
 COMMANDS 						*copyr-commands*
@@ -42,14 +50,39 @@ COMMANDS 						*copyr-commands*
 	The command toggles whether the Copyright year is updated or not for
 	the current buffer.
 
+:CopyrUpdateEndYearFor <owner>				*:CopyrUpdateEndYearFor*
+	The command adds the owner name to look for when adding or updating
+	the end year of a Copyright statement's year range.
+
 :CopyrUpdateFor <owner>					*:CopyrUpdateFor*
+	DEPRECATED - replaced with `:CopyrUpdateEndYearFor`
+	The command adds the owner name to look for when adding or updating
+	the end year of a Copyright statement's year range.
+
+:CopyrUpdateYearFor <owner>				*:CopyrUpdateYearFor*
 	The command adds the owner name to look for when updating the
 	Copyright year.
 
 ==============================================================================
 FUNCTIONS						*copyr-functions*
 
+copyright#UpdateEndYearFor({names})
+	Add one or more Copyright owner names to look for to add or update the
+	end year of a Copyright statement's year range.
+
+	{names} should be a string or a list of strings containing names of
+	the assignee in a Copyright notice.
+
 copyright#UpdateFor({names})
+	DEPRECATED - replaced with copyright#UpdateEndFor()
+
+	Add one or more Copyright owner names to look for to add or update the
+	end year of a Copyright statement's year range.
+
+	{names} should be a string or a list of strings containing names of
+	the assignee in a Copyright notice.
+
+copyright#UpdateYearFor({names})
 	Add one or more Copyright owner names to look for when updating the
 	Copyright year.
 

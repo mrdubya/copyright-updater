@@ -1,7 +1,7 @@
 "=============================================================================
 " Automatic copyright notice year updater plugin for VIM.
 "
-" Copyright (C) 2023 Mike Williams. All rights reserved.
+" Copyright (C) 2023-2025 Mike Williams. All rights reserved.
 "
 " See LICENSE.
 "
@@ -18,6 +18,8 @@ set cpo&vim
 " Commands to control updating Copyright notice
 command! CopyrToggleUpdate :call copyright#ToggleUpdate()
 command! -nargs=1 CopyrUpdateFor :call copyright#UpdateFor(<args>)
+command! -nargs=1 CopyrUpdateEndYearFor :call copyright#UpdateEndYearFor(<args>)
+command! -nargs=1 CopyrUpdateYearFor :call copyright#UpdateYearFor(<args>)
 
 let &cpo = s:keepcpo
 unlet s:keepcpo
